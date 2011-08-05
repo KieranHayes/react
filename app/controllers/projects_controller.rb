@@ -41,7 +41,30 @@ class ProjectsController < ApplicationController
 
   def show
     redirect_to root_url and return if !current_user and !@project.public?
-    redirect_to project_features_path(@project)
+    respond_to do |format|
+      format.csv {
+        require 'csv'
+        @outfile = "features_" + Time.now.strftime("%m-%d-%Y") + ".csv"
+        csv_data = CSV.generate do |row|
+          row << [
+            "Title",
+            "Description"
+            ]
+          @project.features.each do |feature|
+          row << [
+            feature.title,
+            feature.description
+            ]
+          end
+        end
+        send_data(csv_data,
+          :type => 'text/csv; charset=utf-8; header=present',
+          :disposition => "attachment; filename=#{@outfile}")
+
+        flash[:notice] = "Export complete!"
+      }
+      format.html { redirect_to project_features_path(@project) }
+    end
   end
 
   def index

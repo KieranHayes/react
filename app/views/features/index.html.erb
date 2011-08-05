@@ -20,3 +20,4 @@
 <ul id="features">
   <%=render :partial => "feature", :collection => @features%>
 </ul>
+<%= link_to "Export to CSV", project_path(@project, :format => :csv)%>

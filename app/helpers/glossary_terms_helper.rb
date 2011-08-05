@@ -1,6 +1,6 @@
 module GlossaryTermsHelper
   def link_feature_terms(feature)
-    link_feature_terms_by_string(feature.description, feature.project)
+    link_feature_terms_by_string(Albino.colorize(feature.description, :cucumber), feature.project)
   end
 
   def link_feature_terms_by_string(string, project)

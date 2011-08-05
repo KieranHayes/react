@@ -1,35 +1,38 @@
-set :application, "react"
-set :hostname, "reactapp.com"
-
-set :user, "deploy"
+set :stages, %w(staging production) 
+set :default_stage, "staging"
+require "capistrano/ext/multistage"
+require "bundler/capistrano"
+set :application, "reactualize"
+set :hostname, "reactualize.dkd.local"
+set :user, "vagrant"
 set :host, "#{user}@#{hostname}"
 
 set :scm, :git
-set :repository,  "git@github.com:reactualize/react.git"
+set :repository,  "git@github.com:KieranHayes/react.git"
 set :use_sudo, false
 ssh_options[:forward_agent] = true
 default_run_options[:pty] = true
 
-set :deploy_to, "/var/www/#{application}"
+
 set :deploy_via, :remote_cache
 set :runner, user
 set :keep_releases, 10
 
-role :app, "reactapp.com"
-role :web, "reactapp.com"
-role :db,  "reactapp.com", :primary => true
+role :app, "reactualize.dkd.local"
+role :web, "reactualize.dkd.local"
+role :db,  "reactualize.dkd.local", :primary => true
 
 namespace :deploy do
   desc "Restart Unicorn"
   task :restart do
-    run "kill -USR2 `cat #{deploy_to}/shared/pids/unicorn.pid`"
+    run "touch #{deploy_to}/current/tmp/restart.txt"
   end
 
   task :symlink_config, :roles => :app do
-    run "ln -sf #{deploy_to}/shared/database.yml #{release_path}/config/database.yml"
-    run "ln -sf #{deploy_to}/shared/aws_access_key_id.txt #{release_path}/config/aws_access_key_id.txt"
-    run "ln -sf #{deploy_to}/shared/aws_secret_access_key.txt #{release_path}/config/aws_secret_access_key.txt"
-    run "ln -sf #{deploy_to}/shared/csrf_secret_token.txt #{release_path}/config/csrf_secret_token.txt"
+    #run "ln -sf #{deploy_to}/shared/database.yml #{release_path}/config/database.yml"
+    #run "ln -sf #{deploy_to}/shared/aws_access_key_id.txt #{release_path}/config/aws_access_key_id.txt"
+    #run "ln -sf #{deploy_to}/shared/aws_secret_access_key.txt #{release_path}/config/aws_secret_access_key.txt"
+    #run "ln -sf #{deploy_to}/shared/csrf_secret_token.txt #{release_path}/config/csrf_secret_token.txt"
   end
 
 end

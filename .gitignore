@@ -1,4 +1,6 @@
 .DS_Store
+config/deploy.rb
+config/deploy/*
 config/database.yml
 config/aws_access_key_id.txt
 config/aws_secret_access_key.txt
