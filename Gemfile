@@ -14,6 +14,8 @@ gem 'albino'
 gem 'capistrano'
 gem 'capistrano-ext'
 
+gem "fastercsv", :platforms => :mri_18
+
 group :development, :test do
   gem 'rspec-rails'
   gem 'cucumber-rails'

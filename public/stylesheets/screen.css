@@ -812,3 +812,8 @@ div.feature .term_container .tip{
     display: none;
     z-index: 1001;
 }
+
+div.export {
+	text-align: right;
+	padding: 10px;
+}

@@ -43,20 +43,7 @@ class ProjectsController < ApplicationController
     redirect_to root_url and return if !current_user and !@project.public?
     respond_to do |format|
       format.csv {
-        require 'csv'
-        @outfile = "features_" + Time.now.strftime("%m-%d-%Y") + ".csv"
-        csv_data = CSV.generate do |row|
-          row << [
-            "Title",
-            "Description"
-            ]
-          @project.features.each do |feature|
-          row << [
-            feature.title,
-            feature.description
-            ]
-          end
-        end
+        csv_data = render_csv_data
         send_data(csv_data,
           :type => 'text/csv; charset=utf-8; header=present',
           :disposition => "attachment; filename=#{@outfile}")
@@ -81,4 +68,40 @@ class ProjectsController < ApplicationController
   def require_project
     render_not_found and return unless @project
   end
+  
+  def render_csv_data
+    require 'csv' if RUBY_VERSION >= "1.9.2"
+    @outfile = "features_" + Time.now.strftime("%m-%d-%Y") + ".csv"
+    if RUBY_VERSION >= "1.9.2"
+      
+      csv_data = CSV.generate do |row|
+        row << [
+          "Title",
+          "Description"
+          ]
+    
+        @project.features.each do |feature|
+          row << [
+            feature.title,
+            feature.description
+          ]
+        end
+      end
+    else
+      csv_data = FasterCSV.generate do |row|
+        row << [
+          "Title",
+          "Description"
+          ]
+        @project.features.each do |feature|
+          row << [
+            feature.title,
+            feature.description
+            ]
+        end
+      end
+    end
+    csv_data
+  end
+  
 end
