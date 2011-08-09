@@ -94,6 +94,9 @@
     <p><a href="http://twitter.com/reactapp">Follow @reactapp on Twitter</a></p>
     <p>&copy; 2011 <a href="http://reactualize.com">REACTUALIZE LLC</a></p>
   </div>
+  <div>
+    <%= raw "Rails Environment: #{Rails.env}<br />App Path: #{Rails.root}" unless Rails.env == "production" %>
+  </div>
 </div>
 </div>
 </body>
