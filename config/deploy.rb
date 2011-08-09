@@ -3,8 +3,8 @@ set :default_stage, "staging"
 require "capistrano/ext/multistage"
 require "bundler/capistrano"
 set :application, "reactualize"
-set :hostname, "reactualize.dkd.local"
-set :user, "vagrant"
+set :hostname, "reactualize.dkd.de"
+set :user, "dkd-staff"
 set :host, "#{user}@#{hostname}"
 
 set :scm, :git
@@ -18,9 +18,9 @@ set :deploy_via, :remote_cache
 set :runner, user
 set :keep_releases, 10
 set :branch, "dkd"
-role :app, "reactualize.dkd.local"
-role :web, "reactualize.dkd.local"
-role :db,  "reactualize.dkd.local", :primary => true
+role :app, "reactualize.dkd.de"
+role :web, "reactualize.dkd.de"
+role :db,  "reactualize.dkd.de", :primary => true
 
 namespace :deploy do
   desc "Restart Unicorn"
