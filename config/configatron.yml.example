@@ -1,0 +1,12 @@
+development: &development
+  email: do-no-reply@localhost
+
+staging: &staging
+  email: *development
+
+
+production: &production
+  email: *development
+
+test:
+  <<: *development

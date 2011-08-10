@@ -30,6 +30,7 @@ namespace :deploy do
 
   task :symlink_config, :roles => :app do
     run "ln -sf #{deploy_to}/shared/config/database.yml #{release_path}/config/database.yml"
+    run "ln -sf #{deploy_to}/shared/config/configatron.yml #{release_path}/config/configatron.yml"
     #run "ln -sf #{deploy_to}/shared/aws_access_key_id.txt #{release_path}/config/aws_access_key_id.txt"
     #run "ln -sf #{deploy_to}/shared/aws_secret_access_key.txt #{release_path}/config/aws_secret_access_key.txt"
     #run "ln -sf #{deploy_to}/shared/csrf_secret_token.txt #{release_path}/config/csrf_secret_token.txt"

@@ -13,6 +13,7 @@ gem 'react_reporter', :git => "git://github.com/reactualize/react_reporter.git"
 gem 'albino'
 gem 'capistrano'
 gem 'capistrano-ext'
+gem 'configatron'
 
 gem "fastercsv", :platforms => :mri_18
 

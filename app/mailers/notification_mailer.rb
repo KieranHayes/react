@@ -1,7 +1,7 @@
 class NoRecipientsError < StandardError; end
 
 class NotificationMailer < ActionMailer::Base
-  default :from => "admin@reactualize.com"
+  default :from => configatron.email
 
   include ApplicationHelper
 

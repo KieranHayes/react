@@ -1,5 +1,5 @@
 class PasswordResetMailer < ActionMailer::Base
-  default :from => "admin@reactualize.com"
+  default :from => configatron.email
 
   def reset(user)
     @user = user

@@ -1,5 +1,5 @@
 class InvitationMailer < ActionMailer::Base
-  default :from => "admin@reactualize.com"
+  default :from => configatron.email
 
   def invitation(invitation)
     @invitation = invitation
