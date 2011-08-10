@@ -1,6 +1,7 @@
 class NoRecipientsError < StandardError; end
 
 class NotificationMailer < ActionMailer::Base
+  layout "mailer"
   default :from => configatron.email
 
   include ApplicationHelper
@@ -15,7 +16,10 @@ class NotificationMailer < ActionMailer::Base
     raise NoRecipientsError.new if recipient_members.empty?
     recipients = recipient_members.collect{|m| m.user.email}
     mail(:to => recipients,
-         :subject => "[#{feature.project.name}] feature ##{feature.project_feature_id} \"#{feature.title}\" updated by #{feature.updated_by.name}")
+         :subject => "[#{feature.project.name}] feature ##{feature.project_feature_id} \"#{feature.title}\" updated by #{feature.updated_by.name}") do |format|
+          format.html
+          format.text
+         end
   end
 
   def feature_signed_by_client(feature)
