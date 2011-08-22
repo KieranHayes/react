@@ -1,10 +1,10 @@
-<h4>Feature #<%= @feature.project_feature_id %> "<%= @feature.title %>" has been updated by <%= @feature.updated_by.name %>:</h4>
-
+<h4><%= t "txt.notification_mailer.feature_has_been_updated", :project_feature_id => @feature.project_feature_id, :title => @feature.title, :updater_name => @feature.updated_by.name %>:</h4>
 <strong>
-<%=@as_a_or_an%> <%=@feature.actor.name%>
+  <%= t("txt.features.as_a", :actor => @feature.actor.name) %>
 </strong>
+
 <pre>
-<%=@feature.description%>
+  <%=@feature.description%>
 </pre>
-<hr />
-<%= link_to "Click here to review and sign off", project_feature_url(@feature.project, @feature) %>
+---
+<%= t "txt.notification_mailer.click_to_review_and_sign_off" %>: <%= project_feature_url(@feature.project, @feature) %>

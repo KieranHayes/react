@@ -817,3 +817,6 @@ div.export {
 	text-align: right;
 	padding: 10px;
 }
+.as_a a{
+    text-decoration: none;
+}

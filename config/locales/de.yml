@@ -1,0 +1,381 @@
+# German translations for Ruby on Rails
+# by Clemens Kofler (clemens@railway.at)
+# contributors:
+#  - Alexander Dreher - http://github.com/alexdreher - Rails 3 update
+
+de:
+  date:
+    formats:
+      default: "%d.%m.%Y"
+      short: "%e. %b"
+      long: "%e. %B %Y"
+      only_day: "%e"
+
+    day_names:
+      - Sonntag
+      - Montag
+      - Dienstag
+      - Mittwoch
+      - Donnerstag
+      - Freitag
+      - Samstag
+    abbr_day_names:
+      - So
+      - Mo
+      - Di
+      - Mi
+      - Do
+      - Fr
+      - Sa
+    month_names:
+      - ~
+      - Januar
+      - Februar
+      - März
+      - April
+      - Mai
+      - Juni
+      - Juli
+      - August
+      - September
+      - Oktober
+      - November
+      - Dezember
+    abbr_month_names:
+      - ~
+      - Jan
+      - Feb
+      - Mär
+      - Apr
+      - Mai
+      - Jun
+      - Jul
+      - Aug
+      - Sep
+      - Okt
+      - Nov
+      - Dez
+    order:
+      - :day
+      - :month
+      - :year
+
+  time:
+    formats:
+      default: "%A, %d. %B %Y, %H:%M Uhr"
+      short: "%d. %B, %H:%M Uhr"
+      long: "%A, %d. %B %Y, %H:%M Uhr"
+      time: "%H:%M"
+
+    am: "vormittags"
+    pm: "nachmittags"
+
+  datetime:
+    distance_in_words:
+      half_a_minute: 'eine halbe Minute'
+      less_than_x_seconds:
+        one: 'weniger als eine Sekunde'
+        other: 'weniger als %{count} Sekunden'
+      x_seconds:
+        one: 'eine Sekunde'
+        other: '%{count} Sekunden'
+      less_than_x_minutes:
+        one: 'weniger als eine Minute'
+        other: 'weniger als %{count} Minuten'
+      x_minutes:
+        one: 'eine Minute'
+        other: '%{count} Minuten'
+      about_x_hours:
+        one: 'etwa eine Stunde'
+        other: 'etwa %{count} Stunden'
+      x_days:
+        one: 'ein Tag'
+        other: '%{count} Tage'
+      about_x_months:
+        one: 'etwa ein Monat'
+        other: 'etwa %{count} Monate'
+      x_months:
+        one: 'ein Monat'
+        other: '%{count} Monate'
+      almost_x_years:
+        one: 'fast ein Jahr'
+        other: 'fast %{count} Jahre'
+      about_x_years:
+        one: 'etwa ein Jahr'
+        other: 'etwa %{count} Jahre'
+      over_x_years:
+        one: 'mehr als ein Jahr'
+        other: 'mehr als %{count} Jahre'
+    prompts:
+      second: "Sekunden"
+      minute: "Minuten"
+      hour: "Stunden"
+      day: "Tag"
+      month: "Monat"
+      year: "Jahr"
+
+  number:
+    format:
+      precision: 2
+      separator: ','
+      delimiter: '.'
+      significant: false
+      strip_insignificant_zeros: false
+    currency:
+      format:
+        unit: '€'
+        format: '%n %u'
+        separator: ","
+        delimiter: "."
+        precision: 2
+        significant: false
+        strip_insignificant_zeros: false
+    percentage:
+      format:
+        delimiter: ""
+    precision:
+      format:
+        delimiter: ""
+    human:
+      format:
+        delimiter: ""
+        precision: 1
+        significant: true
+        strip_insignificant_zeros: true
+      storage_units:
+        # Storage units output formatting.
+        # %u is the storage unit, %n is the number (default: 2 MB)
+        format: "%n %u"
+        units:
+          byte:
+            one:   "Byte"
+            other: "Bytes"
+          kb: "KB"
+          mb: "MB"
+          gb: "GB"
+          tb: "TB"
+      decimal_units:
+        format: "%n %u"
+        units:
+          unit: ""
+          thousand: Tausend
+          million: Millionen
+          billion:
+            one: Milliarde
+            others: Milliarden
+          trillion: Billionen
+          quadrillion:
+            one: Billiarde
+            others: Billiarden
+
+  support:
+    array:
+      words_connector: ", "
+      two_words_connector: " und "
+      last_word_connector: " und "
+    select:
+      prompt: "Bitte wählen:"
+
+  activemodel:
+    errors:
+      template:
+        header:
+          one:    "Konnte %{model} nicht speichern: ein Fehler."
+          other:  "Konnte %{model} nicht speichern: %{count} Fehler."
+        body: "Bitte überprüfen Sie die folgenden Felder:"
+  helpers:
+    select:
+      prompt: "Bitte wählen"
+
+    submit:
+      create: '%{model} erstellen'
+      update: '%{model} aktualisieren'
+      submit: '%{model} speichern'
+
+  errors:
+    format: "%{attribute} %{message}"
+
+    messages: &errors_messages
+      inclusion: "ist kein gültiger Wert"
+      exclusion: "ist nicht verfügbar"
+      invalid: "ist nicht gültig"
+      confirmation: "stimmt nicht mit der Bestätigung überein"
+      accepted: "muss akzeptiert werden"
+      empty: "muss ausgefüllt werden"
+      blank: "muss ausgefüllt werden"
+      too_long: "ist zu lang (nicht mehr als %{count} Zeichen)"
+      too_short: "ist zu kurz (nicht weniger als %{count} Zeichen)"
+      wrong_length: "hat die falsche Länge (muss genau %{count} Zeichen haben)"
+      not_a_number: "ist keine Zahl"
+      greater_than: "muss größer als %{count} sein"
+      greater_than_or_equal_to: "muss größer oder gleich %{count} sein"
+      equal_to: "muss genau %{count} sein"
+      less_than: "muss kleiner als %{count} sein"
+      less_than_or_equal_to: "muss kleiner oder gleich %{count} sein"
+      odd: "muss ungerade sein"
+      even: "muss gerade sein"
+      not_an_integer: "muss ganzzahlig sein"
+
+  activerecord:
+    errors:
+      template:
+        header:
+          one:    "Konnte %{model} nicht speichern: ein Fehler."
+          other:  "Konnte %{model} nicht speichern: %{count} Fehler."
+        body: "Bitte überprüfen Sie die folgenden Felder:"
+
+      messages:
+        taken: "ist bereits vergeben"
+        record_invalid: "Gültigkeitsprüfung ist fehlgeschlagen: %{errors}"
+        <<: *errors_messages
+
+      full_messages:
+        format: "%{attribute} %{message}"
+  txt:
+    general:
+      confirm: Sind Sie sicher?
+      update: Aktualisieren
+      create: Erstellen
+      edit: Bearbeiten
+      delete: Löschen
+      developer: Entwickler
+      client: Kunde
+      cancel: Abbrechen
+      remove: Entfernen
+      save: Speichern
+    nav:
+      sign_out: Abmelden
+      sign_up: Registrieren
+      sign_in: Anmelden
+      project_settings: Projekt Einstellungen
+      add_feature: NEUES FEATURE
+      add_project: NEUES PROJEKT
+      add_term: NEUER TERM
+      reset_password: Passwort zurücksetzen
+      must_be_logged_in: Sie müssen angemeldet sein, um auf diese Seite zugreifen zu können
+      membership_required: Mitgliedschaft erforderlich
+      must_be_admin: Sie müssen ein Administrator sein, um auf diese Seite zugreifen zu können
+    actors:
+      add_actor: Neuer Akteur
+      name: Name
+      delete_actor: Akteur löschen
+      new_actor: Neuer Akteur
+      all_actors: ALLE AKTEURE
+      actor_created: Akteur erstellt
+      actor_updated: Akteur aktualisiert
+    features:
+      delete_feature: Feature löschen
+      unsigned: UNSIGNIERT
+      add_feature: Neues Feature
+      sign_off_developer: Als Entwickler abzeichnen
+      sign_off_client: Als Kunde abzeichnen
+      post_comment: Kommentar erstellen
+      title: Titel
+      feature_created: Feature erstellt
+      feature_updated: Feature aktualisiert
+      comment_created: Kommentar erstellt
+      as_a: "Als ein %{actor}"
+    glossary:
+      name: Name
+      definition: Definition
+      name_definition_required: Name und Definition werden benötigt.
+      edit_term: Term bearbeiten
+      new_term: Neuer Term
+      add_term: Neuer Term
+      term_created: Term erstellt
+      term_updated: Term aktualisiert
+      glossary: Glossar
+    invitation_mailer:
+      youve_been_invited: "Sie wurden eingeladen dem Projekt %{project_name} auf REACT beizutreten."
+      click_to_accept: Klicken Sie hier, um zu akzeptieren
+      invitation_subject: "Sie wurden eingeladen dem Projekt %{project_name} auf REACT beizutreten"
+    invitations:
+      add_member: Neues Mitglied
+      email: E-Mail
+      will_be_admin: Dieses Mitglied wird ein Administrator sein.
+      is_a_developer: Dieses Mitglied ist ein Entwickler.
+      is_a_client: Dieses Mitglied ist ein Kunde.
+      invite_new_member: Neues Mitglied einladen
+      accept_invitation: "Einladung zum Projekt akzeptieren: %{project_name}"
+      invitations: Einladungen
+      invitation_sent: "Einladung an %{email} gesendet"
+      invitation_removed: Einladung entfernt
+      invalid_code: Ungültiger Einladungscode
+      must_have_an_account: Sie müssen ein Konto besitzen und angemeldet sein, um diese Einladung annehmen zu können
+      invalid_for_account: Diese Einladung ist für dieses Konto ungültig
+    memberships:
+      new_member: Neues Mitglied
+      memberships: Mitgliedschaften
+      name: Name
+      email: E-Mail
+      is_admin: Administrator?
+      is_developer: Entwickler?
+      is_client: Kunde?
+      invitations: Einladungen
+      memberships_updated: Mitgliedschaften aktualisiert
+      membership_created: Mitgliedschaft erstellt
+      membership_updated: Mitgliedschaft aktualisiert
+      membership_removed: Mitgliedschaften entfernt
+    notification_mailer:
+      feature_has_been_signed: "Feature %{project_feature_id} \"%{title}\" wurde von Kunde %{client_name} abgezeichnet"
+      click_to_review: Klicken Sie hier, um dieses Feature zu überprüfen
+      feature_has_been_updated: "Feature %{project_feature_id} \"%{title}\" wurde aktualisiert von %{updater_name}"
+      click_to_review_and_sign_off: Klicken Sie hier zum Überprüfen und Abzeichnen
+      feature_updated_subject: "[%{project_name}] Feature #%{project_feature_id} \"%{title}\" aktualisiert von %{updater_name}"
+      feature_signed_subject: "[%{project_name}] Feature #%{project_feature_id} \"%{title}\" abgezeichnet von Kunde %{client_name}"
+    password_reset_mailer:
+      instructions: REACT Anleitung zum Passwort zurücksetzen
+      request_has_been_made: "Es wurde eine Anfrage zum Zurücksetzen Ihres Passworts gestellt. Wenn Sie dies nicht selbst veranlasst haben, ignorieren Sie diese E-Mail einfach. Wenn Sie diese Anfrage selbst gestellt haben, klicken Sie bitte den folgenden Link."
+      click_to_reset: Klicken Sie diesen Link, um Ihr Passwort zurückzusetzen.
+    password_resets:
+      update_your_password: Aktualisieren Sie Ihr Passwort
+      enter_new_password: "Bitte geben Sie Ihr neues Passwort ein und drücken dann \"Passwort aktualisieren\"."
+      update_password: Passwort aktualisieren
+      reset_password: Passwort zurücksetzen
+      enter_email_address: "Bitte geben Sie Ihre E-Mailadresse ein und drücken dann \"Passwort zurücksetzen\"."
+      instructions_have_been_emailed: Eine Anleitung zum Zurücksetzen Ihres Passwort wurde per E-Mail an Sie gesendet
+      no_user_was_found: "Es wurde kein Benutzer mit der E-Mailadresse %{email} gefunden"
+      password_updated: Ihr Passwort wurde erfolgreich aktualisiert
+      could_not_locate_account: Es tut uns leid, wir konnten Ihr Konto nicht finden
+    projects:
+      glossary: Glossar
+      actors: Akteure
+      settings: Einstellungen
+      name: Name
+      public: Öffentlich
+      update_memberships: Mitgliedschaften aktualisieren
+      add_member: Neues Mitglied
+      api_key: API Key
+      none: Kein
+      generate_api_key: Neuen API Key generieren
+      new_project: Neues Projekt
+      what_is_your_role: Was ist Ihre Rolle in diesem Projekt?
+      i_am_client: Ich bin ein Kunde
+      i_am_developer: Ich bin ein Entwickler
+      project_created: Projekt erstellt
+      project_updated: Projekt aktualisiert
+      api_key_generated: API Key generiert
+    homepage:
+      rethinking_requirements: Anforderungen überdenken
+      react_is: REACT ist ein einfach zu benutzendes Software-Dokumentations-Tool mit dem Kunden und Entwickler auf der gleichen Seite stehen.
+      stop_passing: Hören Sie auf, Word-Dokumente herumzuschicken
+      passing_around_files: Dateien herumzuschicken ist ineffizient und führt zu inkonsistenten Versionen. REACT ist eine Webapplikation die stets verfügbar ist und den Dokumentationsprozess durch Fokussierung auf Features, Akteure und ein Glossar vereinfacht.
+      sign_on_the_line: Unterschreiben Sie auf der gepunkteten Linie
+      adding_a_feature: Das Hinzufügen oder Ändern eines Features ist eine große Sache. Jegliche Fehlkommunikation zu Anforderungen kann zu erheblichen Verlusten von Zeit und Geld führen. Durch das Erzwingen von Unterschriften für jedes Feature, stellt REACT sicher, dass Kunde und Entwickler sich einig darüber sind, was entwickelt wird.
+      documentation: Dokumentation ist ein fortlaufender Prozess
+      react_connects: REACT verbindet Ihren Entwicklungsprozess mit der Dokumentation. Wir verbinden Testergebnisse direkt mit REACT-Features, um dem Kunden zu zeigen welche Feature funktionieren und welche nicht. Der Kunde kann direkt den Fortschritt im Kontext der gesamten Anforderungsspezifikation sehen.
+      effective_requirements: "Eine effektive Anforderungsspezifikation beantwortet die Frage: \"Was tut die Software?\" REACT involviert die Beteiligten durch die Erfordernis alle Anforderungsänderungen abzuzeichnen und macht den Entwicklungsprozess durch die Darstellung von Testergebnissen transparent."
+    dashboard:
+      dashboard: Dashboard
+      new_project: Neues Projekt
+      projects: Projekte
+    settings:
+      settings: Einstellungen
+      name: Name
+      email: E-Mail
+      password: Passwort
+      password_confirmation: Passwort Bestätigung
+      time_zone: Zeitzone
+      locale: Locale
+    users:
+      settings_saved: Einstellungen gespeichert
