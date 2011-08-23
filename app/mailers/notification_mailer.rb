@@ -19,7 +19,7 @@ class NotificationMailer < ActionMailer::Base
           format.html
           format.text
          end
-
+    end
   def feature_signed_by_client(feature)
     @feature = feature
     recipients = feature.project.memberships.select{|m| m.developer?}.collect{|m| m.user.email}
