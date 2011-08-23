@@ -1,7 +1,11 @@
-<%= t "txt.notification_mailer.feature_has_been_updated", :project_feature_id => @feature.project_feature_id, :title => @feature.title, :updater_name => @feature.updated_by.name %>:
+<%=raw(t("txt.notification_mailer.feature_has_been_updated", 
+    :project_feature_id => raw(@feature.project_feature_id), 
+    :title => raw(@feature.title), 
+    :updater_name => raw(@feature.updated_by.name)
+    )) %>:
 
-<%= t("txt.features.as_a", :actor => @feature.actor.name) %>
-<%=@feature.description%>
+<%= raw t("txt.features.as_a", :actor => @feature.actor.name) %>
+<%= raw @feature.description%>
 
 ---
-<%= t "txt.notification_mailer.click_to_review_and_sign_off" %>: <%= project_feature_url(@feature.project, @feature) %>
+<%= raw t("txt.notification_mailer.click_to_review_and_sign_off") %>: <%= raw project_feature_url(@feature.project, @feature) %>
