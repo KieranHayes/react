@@ -14,6 +14,7 @@ gem 'react_reporter', :git => "git://github.com/reactualize/react_reporter.git"
 
 gem 'capistrano'
 gem 'capistrano-ext'
+gem 'capistrano-syntax-checking'
 gem 'configatron'
 
 gem "fastercsv", :platforms => :mri_18
@@ -21,6 +22,7 @@ gem "fastercsv", :platforms => :mri_18
 gem 'rake', '0.8.7'
 gem 'capistrano'
 
+gem "thin"
 
 group :development, :test do
   gem 'rspec-rails'
